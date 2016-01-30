@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" ng-app="ngdemo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My AngularJS App</title>
+<link rel="stylesheet" href="css/app.css" />
+<link rel="stylesheet" href="css/carrousel.css" />
+<!-- <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.min.css" /> -->
+<!-- <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" /> -->
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+<script>
+	$(function() {
+		//   $("#header").load("header.html"); 
+		$("#footer").load("templating/footer.html");
+		$("#menuBar").load("templating/menuBar.html");
+		$("#header").load("templating/header.html");
+	});
+</script>
+</head>
+<body id="page">
+    <div id="header"></div>
+    
+    <div class="row">
+    <div id="menuBar" class="col-sm-3 col-md-6 col-lg-2" style="background-color:lavender;margin-left:15px"></div>
+    <div ng-view class="col-sm-9 col-md-6 col-lg-8" ></div>
+    </div>
+	<!--     <div id="menuBar"></div> -->
+	<!-- 	<div ng-view></div> -->
+
+	<div id="footer"></div>
+<!-- 	<script src="js/jquery/jquery-2.0.3.js"></script> -->
+<!-- 	<script src="js/bootstrap/bootstrap.js"></script> -->
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular/angular-resource.js"></script>
+
+	<!-- AngularJS App Code -->
+	<script src="js/app.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/directives.js"></script>
+
+</body>
+</html>

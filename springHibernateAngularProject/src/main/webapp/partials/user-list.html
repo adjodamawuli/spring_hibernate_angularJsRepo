@@ -1,0 +1,30 @@
+<div class="span6">
+	<div class="input-group">
+            <input class="form-control" id="search" name="search" placeholder="Search for" ng-model="query"
+                       required="required"/>
+     </div>
+    <table class="table table-striped table-condensed">
+        <thead>
+        <tr>
+            <th style="min-width: 80px;">First name</th>
+            <th style="min-width: 80px;">Last name</th>
+            <th style="width:20px;">&nbsp;</th>
+            <th style="width:20px;">&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in users | filter:query">
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.familyName }}</td>
+            <td>{{ user.email }}</td>
+            <td><img class="circle"
+                                 src="http://i.forbesimg.com/media/lists/people/{{user.firstName | lowercase}}-{{user.familyName | lowercase}}_50x50.jpg"
+                                 alt="icon">
+            </td>
+            <td><a ng-click="editUser(user.id)" class="btn btn-small btn-primary">edit</a></td>
+            <td><a ng-click="deleteUser(user.id)" class="btn btn-small btn-danger">delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <a ng-click="createNewUser()" class="btn btn-small">create new user</a>
+</div>

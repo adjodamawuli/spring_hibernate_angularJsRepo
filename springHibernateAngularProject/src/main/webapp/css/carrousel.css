@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+/* body { */
+/* 	width: 100%; */
+/* /* 	background-image: url(img9.jpg); */ */
+/* 	background-repeat: no-repeat; */
+/* 	background-position: center; no-repeat center center fixed; */
+/* 	-moz-background-size: cover; */
+/* 	-webkit-background-size: cover; */
+/* 	-o-background-size: cover; */
+/* 	background-size: cover; */
+/* } */
+
+.carousel-control.left {
+	background-image: none;
+}
+
+.carousel-control.right {
+	background-image: none;
+}
+
+/* #body { */
+/* 	margin-top: 150px; */
+/* 	margin: auto; */
+/* } */
