@@ -21,6 +21,7 @@ public class Image implements Serializable {
 	private String name;
 	private String type;
 	private Annonce annonce;
+	private String mimeType;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -65,6 +66,14 @@ public class Image implements Serializable {
 
 	public void setAnnonce(Annonce annonce) {
 		this.annonce = annonce;
+	}
+
+	public String getMimeType() {
+		return mimeType;
+	}
+
+	public void setMimeType(String mimeType) {
+		this.mimeType = mimeType;
 	}
 
 }
