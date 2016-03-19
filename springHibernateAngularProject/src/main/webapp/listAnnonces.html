@@ -1,0 +1,55 @@
+<html ng-app=ngdemo>
+<head>
+<meta charset="utf8" />
+<title>Document Archive</title>
+<link rel="stylesheet" href="css/app.css" />
+<link rel="stylesheet" href="css/carrousel.css" />
+<!-- <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.min.css" /> -->
+<!-- <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" /> -->
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<h1>Document Archive</h1>
+		</div>
+		<div id="main" ng-controller="AnnonceListCtrl">
+
+			<table id="table-6">
+				<thead>
+					<tr>
+						<th>Titre</th>
+						<th>Prix</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="annonce in annonces">
+						<td>{{annonce.titre}}</td>
+						<td>{{annonce.prix}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="footer">
+			<p>Footer</p>
+		</div>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular/angular-resource.js"></script>
+
+	<!-- AngularJS App Code -->
+	<script src="js/app.js"></script>
+	<script src="js/annonce/annonceServices.js"></script>
+	<script src="js/annonce/annonceControllers.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/directives.js"></script>
+<!-- 	<script src="annonceControllers.js"></script> -->
+<!-- 	<script src="annonceServices.js"></script> -->
+	
+</body>
+</html>
