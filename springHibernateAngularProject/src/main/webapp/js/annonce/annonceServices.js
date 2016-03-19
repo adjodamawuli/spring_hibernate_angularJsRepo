@@ -15,7 +15,7 @@
 
  */
 
-var services = angular.module('ngdemo.annonce.services', ['ngResource']);
+var services = angular.module('myApp.annonce.services', ['ngResource']);
 
 
 services.factory('AnnoncesFactory', function ($resource) {

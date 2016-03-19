@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('ngdemo', ['ngdemo.filters', 'ngdemo.user.services', 'ngdemo.directives', 'ngdemo.user.controllers']).
+angular.module('myApp', ['myApp.filters', 'myApp.user.services', 'myApp.directives', 'myApp.user.controllers']).
     config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/user-list', {templateUrl: 'partials/user/user-list.html', controller: 'UserListCtrl'});
         $routeProvider.when('/user-detail/:id', {templateUrl: 'partials/user/user-detail.html', controller: 'UserDetailCtrl'});

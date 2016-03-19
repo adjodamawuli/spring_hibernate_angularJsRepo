@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-var app = angular.module('ngdemo.user.controllers', []);
+var app = angular.module('myApp.user.controllers', []);
 
 
 // Clear browser cache (in development mode)

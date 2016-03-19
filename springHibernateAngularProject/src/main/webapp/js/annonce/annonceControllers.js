@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-var app = angular.module('ngdemo.annonce.controllers', []);
+var app = angular.module('myApp.annonce.controllers', []);
 
 
 // Clear browser cache (in development mode)
