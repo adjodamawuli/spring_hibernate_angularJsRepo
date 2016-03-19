@@ -18,7 +18,7 @@ app.directive('fileModel', [ '$parse', function($parse) {
 
 app.service('ArchiveService', [ '$http', '$rootScope', function($http, $rootScope) {
 	this.search = function(name, date) {
-		$http.get("http://localhost:8080/springangularJs/archive/documents", {
+		$http.get("/springangularJs/archive/documents", {
 			params : {
 				person : name,
 				date : date
@@ -58,14 +58,16 @@ app.controller('UploadCtrl', [ '$scope', 'fileUpload',
 				var name = $scope.name;
 				var date = $scope.date;
 				console.log('file is ' + JSON.stringify(file));
-				var uploadUrl = "http://localhost:8080/springangularJs/archive/upload";
+//				var uploadUrl = "http://localhost:8080/springangularJs/archive/upload";
+				var uploadUrl = "/springangularJs/archive/upload";
 				fileUpload.uploadFileToUrl(uploadUrl, file, name, date);
 			};
 		} ]);
 
 app.controller('ArchiveCtrl', function($scope, $http) {
 	$scope.search = function(name, date) {
-		$http.get("http://localhost:8080/springangularJs/archive/documents", {
+//		$http.get("http://localhost:8080/springangularJs/archive/documents", {
+		$http.get("/springangularJs/archive/documents", {
 			params : {
 				person : name,
 				date : date
@@ -77,7 +79,7 @@ app.controller('ArchiveCtrl', function($scope, $http) {
 });
 
 app.run(function($rootScope, $http) {
-	$http.get("http://localhost:8080/springangularJs/archive/documents").success(
+	$http.get("/springangularJs/archive/documents").success(
 			function(response) {
 				$rootScope.metadataList = response;
 			});

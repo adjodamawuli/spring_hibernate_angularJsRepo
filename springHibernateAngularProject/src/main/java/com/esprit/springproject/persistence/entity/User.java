@@ -30,28 +30,28 @@ public class User implements Serializable {
 	@Column(name = "id", nullable = false)
 	private Long id;
 
-	@Column(name = "first_name", nullable = false)
+	@Column(name = "first_name")
 	private String firstName;
 
-	@Column(name = "family_name", nullable = false)
+	@Column(name = "family_name")
 	private String familyName;
 
-	@Column(name = "e_mail", nullable = false)
+	@Column(name = "e_mail")
 	private String email;
 
-	@Column(name = "phone", nullable = false)
+	@Column(name = "phone")
 	private String phone;
 
-	@Column(name = "language", nullable = false)
+	@Column(name = "language")
 	private String language;
 
 	@Column(name = "id_picture")
 	private String pictureId;
 
-	@Column(name = "login", nullable = false)
+	@Column(name = "login")
 	private String login;
 
-	@Column(name = "password", nullable = false)
+	@Column(name = "password")
 	private String password;
 
 	@Column(name = "burth_date")
