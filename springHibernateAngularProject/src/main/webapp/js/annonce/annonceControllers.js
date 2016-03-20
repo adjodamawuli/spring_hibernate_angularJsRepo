@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-var app = angular.module('myApp.annonce.controllers', []);
+var app = angular.module('annonce.controllers', []);
 
 
 // Clear browser cache (in development mode)
