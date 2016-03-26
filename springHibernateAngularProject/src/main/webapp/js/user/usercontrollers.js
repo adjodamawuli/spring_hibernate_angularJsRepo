@@ -2,13 +2,13 @@
 
 /* Controllers */
 
-var app = angular.module('controllers', []);
+var userControllers = angular.module('userControllers', []);
 
 
 // Clear browser cache (in development mode)
 //
 // http://stackoverflow.com/questions/14718826/angularjs-disable-partial-caching-on-dev-machine
-app.run(function ($rootScope, $templateCache) {
+userControllers.run(function ($rootScope, $templateCache) {
     $rootScope.$on('$viewContentLoaded', function () {
         $templateCache.removeAll();
     });
@@ -16,7 +16,7 @@ app.run(function ($rootScope, $templateCache) {
 
 
 
-app.controller('UserListCtrl', ['$scope', 'UsersFactory', 'UserFactory', '$location',
+userControllers.controller('UserListCtrl', ['$scope', 'UsersFactory', 'UserFactory', '$location',
     function ($scope, UsersFactory, UserFactory, $location) {
 
         // callback for ng-click 'editUser':
@@ -39,7 +39,7 @@ app.controller('UserListCtrl', ['$scope', 'UsersFactory', 'UserFactory', '$locat
         $scope.users = UsersFactory.query();
     }]);
 
-app.controller('UserDetailCtrl', ['$scope', '$routeParams', 'UserFactory', '$location',
+userControllers.controller('UserDetailCtrl', ['$scope', '$routeParams', 'UserFactory', '$location',
     function ($scope, $routeParams, UserFactory, $location) {
 
         // callback for ng-click 'updateUser':
@@ -57,7 +57,7 @@ app.controller('UserDetailCtrl', ['$scope', '$routeParams', 'UserFactory', '$loc
         $scope.user = UserFactory.show({id: $routeParams.id});
     }]);
 
-app.controller('UserCreationCtrl', ['$scope', 'UsersFactory', '$location',
+userControllers.controller('UserCreationCtrl', ['$scope', 'UsersFactory', '$location',
     function ($scope, UsersFactory, $location) {
 
         // callback for ng-click 'createNewUser':
@@ -68,32 +68,3 @@ app.controller('UserCreationCtrl', ['$scope', 'UsersFactory', '$location',
         }
     }]);
 
-// Document
-
-/* js/fileAppControllers.js */
-/*
-function fileCtrl ($scope) {
-}
-app.controller('fileCtrl', fileCtrl)
-
-  fileAppControllers.controller('FileCtrl', ['scope',
-                function ($scope) {
-
-                    $scope.partialDownloadLink = 'http://localhost:8080/download?filename=';
-                    $scope.filename = '';
-
-                    $scope.uploadFile = function() {
-                        $scope.processQueue();
-                    };
-
-                    $scope.reset = function() {
-                        $scope.resetDropzone();
-                    };
-                }
-
-            ]);
-
-function dropzone() {
-}
-app.directive('dropzone', dropzone);
-*/

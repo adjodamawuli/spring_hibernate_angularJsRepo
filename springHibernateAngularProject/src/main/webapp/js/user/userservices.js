@@ -15,17 +15,17 @@
 
  */
 
-var services = angular.module('services', ['ngResource']);
+var userServices = angular.module('userServices', ['ngResource']);
 
 
-services.factory('UsersFactory', function ($resource) {
+userServices.factory('UsersFactory', function ($resource) {
     return $resource('users', {}, {
         query: { method: 'GET', isArray: true },
         create: { method: 'POST' }
     })
 });
 
-services.factory('UserFactory', function ($resource) {
+userServices.factory('UserFactory', function ($resource) {
     return $resource('user/:id', {}, {
         show: { method: 'GET' },
         update: { method: 'PUT', params: {id: '@id'} },

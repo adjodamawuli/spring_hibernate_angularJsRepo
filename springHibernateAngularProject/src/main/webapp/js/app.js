@@ -8,8 +8,8 @@
  var myApp = angular.module('myApp', [
 // Dépendances du "module"
 	'ngRoute', 
-	'controllers', 
-	'services', 
+	'userControllers', 
+	'userServices', 
 	'filters',
 	'directives' 
 	
