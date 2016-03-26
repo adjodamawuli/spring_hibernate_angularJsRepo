@@ -15,7 +15,7 @@
 
  */
 
-var services = angular.module('myApp.user.services', ['ngResource']);
+var services = angular.module('services', ['ngResource']);
 
 
 services.factory('UsersFactory', function ($resource) {
