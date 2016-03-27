@@ -28,7 +28,7 @@ userControllers.controller('UserListCtrl', ['$scope', 'UsersFactory', 'UserFacto
         $scope.deleteUser = function (userId) {
             UserFactory.delete({ id: userId });
             $scope.users = UsersFactory.query();
-            $scope.$apply();
+//            $scope.$apply();
         };
 
         // callback for ng-click 'createUser':
@@ -39,13 +39,14 @@ userControllers.controller('UserListCtrl', ['$scope', 'UsersFactory', 'UserFacto
         $scope.users = UsersFactory.query();
     }]);
 
-userControllers.controller('UserDetailCtrl', ['$scope', '$routeParams', 'UserFactory', '$location',
-    function ($scope, $routeParams, UserFactory, $location) {
+//Mise en place de uiRoute: routeParams DEVIENT stateParams 
+userControllers.controller('UserDetailCtrl', ['$scope', '$stateParams', 'UserFactory', '$location',
+    function ($scope, $stateParams, UserFactory, $location) {
 
         // callback for ng-click 'updateUser':
         $scope.updateUser = function () {
             UserFactory.update($scope.user);
-            $scope.$apply();
+//            $scope.$apply();
             $location.path('/user-list');
         };
 
@@ -54,7 +55,7 @@ userControllers.controller('UserDetailCtrl', ['$scope', '$routeParams', 'UserFac
             $location.path('/user-list');
         };
 
-        $scope.user = UserFactory.show({id: $routeParams.id});
+        $scope.user = UserFactory.show({id: $stateParams.id});
     }]);
 
 userControllers.controller('UserCreationCtrl', ['$scope', 'UsersFactory', '$location',
@@ -63,7 +64,7 @@ userControllers.controller('UserCreationCtrl', ['$scope', 'UsersFactory', '$loca
         // callback for ng-click 'createNewUser':
         $scope.createNewUser = function () {
             UsersFactory.create($scope.user);
-            $scope.$apply();
+//            $scope.$apply();
             $location.path('/user-list');
         }
     }]);
