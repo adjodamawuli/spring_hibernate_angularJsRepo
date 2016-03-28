@@ -15,17 +15,17 @@
 
  */
 
-var services = angular.module('annonce.services', ['ngResource']);
+var annonceServices = angular.module('annonceServices', ['ngResource']);
 
 
-services.factory('AnnoncesFactory', function ($resource) {
+annonceServices.factory('AnnoncesFactory', function ($resource) {
     return $resource('annonces', {}, {
         query: { method: 'GET', isArray: true },
         create: { method: 'POST' }
     })
 });
 
-services.factory('AnnonceFactory', function ($resource) {
+annonceServices.factory('AnnonceFactory', function ($resource) {
     return $resource('annonce/:id', {}, {
         show: { method: 'GET' },
         update: { method: 'PUT', params: {id: '@id'} },

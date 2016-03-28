@@ -30,12 +30,12 @@
 	            templateUrl: 'partials/user/user-list.html',
 	            controller: 'UserListCtrl'
 	        })
-	        .state('user home', {
+	        .state('userhome', {
 	            url: '/user-detail/:id',
 	            templateUrl: 'partials/user/user-detail.html',
 	            controller: 'UserDetailCtrl'
 	        })
-	        .state('add user', {
+	        .state('adduser', {
 	            url: '/user-creation',
 	            templateUrl: 'partials/user/user-creation.html',
 	            controller: 'UserCreationCtrl'

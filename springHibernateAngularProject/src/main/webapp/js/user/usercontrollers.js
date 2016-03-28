@@ -28,7 +28,6 @@ userControllers.controller('UserListCtrl', ['$scope', 'UsersFactory', 'UserFacto
         $scope.deleteUser = function (userId) {
             UserFactory.delete({ id: userId });
             $scope.users = UsersFactory.query();
-//            $scope.$apply();
         };
 
         // callback for ng-click 'createUser':
@@ -46,7 +45,6 @@ userControllers.controller('UserDetailCtrl', ['$scope', '$stateParams', 'UserFac
         // callback for ng-click 'updateUser':
         $scope.updateUser = function () {
             UserFactory.update($scope.user);
-//            $scope.$apply();
             $location.path('/user-list');
         };
 
@@ -64,7 +62,6 @@ userControllers.controller('UserCreationCtrl', ['$scope', 'UsersFactory', '$loca
         // callback for ng-click 'createNewUser':
         $scope.createNewUser = function () {
             UsersFactory.create($scope.user);
-//            $scope.$apply();
             $location.path('/user-list');
         }
     }]);
