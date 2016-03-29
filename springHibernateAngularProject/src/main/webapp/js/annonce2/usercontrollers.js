@@ -30,7 +30,10 @@ app.controller('AnnonceListCtrl', ['$scope', 'AnnoncesFactory', 'AnnonceFactory'
         $scope.createNewAnnonce = function () {
             $location.path('/annonce-creation');
         };
-
+        $scope.listAnnonce = function () {
+        	$scope.annonces = AnnoncesFactory.query();
+            $location.path('/annonce-list');
+        };
         $scope.annonces = AnnoncesFactory.query();
     }]);
 
@@ -53,7 +56,9 @@ app.controller('AnnonceCreationCtrl', ['$scope', 'AnnoncesFactory', '$location',
     function ($scope, AnnoncesFactory, $location) {
 
         $scope.createNewAnnonce = function () {
-        	AnnoncesFactory.create($scope.user);
+        	alert("creation annonce");
+        	AnnoncesFactory.create($scope.annonce);
+        	alert("redirect to /annonce-list");
             $location.path('/annonce-list');
         }
     }]);

@@ -37,7 +37,7 @@
 	        })
 	        .state('addannonce', {
 	            url: '/annonce-creation',
-	            templateUrl: 'partials/annonce/annonce-creation.html',
+	            templateUrl: 'partials/annonce/addAnonce.html',
 	            controller: 'AnnonceCreationCtrl'
 	        })
 	        
