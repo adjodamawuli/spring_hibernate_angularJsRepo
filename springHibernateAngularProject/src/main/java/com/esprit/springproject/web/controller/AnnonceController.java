@@ -1,17 +1,11 @@
 package com.esprit.springproject.web.controller;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.annotation.PostConstruct;
-
+import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpHeaders;
@@ -29,7 +23,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.esprit.springproject.persistence.entity.Annonce;
-import com.esprit.springproject.persistence.entity.Document;
 import com.esprit.springproject.persistence.entity.Image;
 import com.esprit.springproject.service.IAnnonceService;
 import com.esprit.springproject.service.IImageService;
@@ -82,6 +75,8 @@ public class AnnonceController {
 	@RequestMapping(value = "/annonces", method = RequestMethod.POST)
 	public ResponseEntity<Void> createAnnonce(@RequestBody Annonce annonce, UriComponentsBuilder ucBuilder) {
 		if (annonce != null) {
+			System.out.println(byteToBase64(image.getContent()));
+			annonce.setImgB64(byteToBase64(image.getContent()));
 			annonce=annonceService.save(annonce);
 			image.setAnnonce(annonce);
 			imageService.save(image);
@@ -120,5 +115,11 @@ public class AnnonceController {
 
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+
+	 @SuppressWarnings("static-access")  
+	 public static String byteToBase64(byte[] data) {  
+	  Base64 base64 = new Base64();  
+	  return base64.encodeBase64String(data);  
+	 } 
 
 }

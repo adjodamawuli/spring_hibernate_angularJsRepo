@@ -24,6 +24,7 @@ public class Annonce implements Serializable {
 	private Double prix;
 	private String quartier;
 	private List<Image> images;
+	private String imgB64;
 	private Etat etat;
 	private User user;
 	private Boolean isEnable;
@@ -107,6 +108,14 @@ public class Annonce implements Serializable {
 
 	public void setIsEnable(Boolean isEnable) {
 		this.isEnable = isEnable;
+	}
+
+	public String getImgB64() {
+		return imgB64;
+	}
+
+	public void setImgB64(String imgB64) {
+		this.imgB64 = imgB64;
 	}
 
 }
