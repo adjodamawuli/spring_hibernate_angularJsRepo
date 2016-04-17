@@ -8,9 +8,9 @@ public interface IAbstractService<T extends Serializable, ID extends Serializabl
 
 	List<T> findAll();
 
-	void save(T t);
+	T save(T t);
 
-	void update(T t);
+	T update(T t);
 
 	void delete(ID id);
 }

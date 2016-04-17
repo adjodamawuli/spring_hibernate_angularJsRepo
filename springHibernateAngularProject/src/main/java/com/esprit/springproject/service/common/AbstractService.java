@@ -27,13 +27,12 @@ public abstract class AbstractService<T extends Serializable, ID extends Seriali
 		return getGenericDao().findAll();
 	}
 
-	public void save(T t) {
-		t = getGenericDao().saveAndFlush(t);
-		System.out.println(t.toString());
+	public T save(T t) {
+		return  getGenericDao().saveAndFlush(t);
 	}
 
-	public void update(T t) {
-		getGenericDao().saveAndFlush(t);
+	public T update(T t) {
+		return getGenericDao().saveAndFlush(t);
 	}
 
 	public void delete(ID id) {

@@ -43,3 +43,33 @@
 	        
 	});
 
+
+ myApp.directive("disableLink", function() {
+	    return {
+	        restrict: "A",
+	        link: function(scope, elem, attrs) {
+	            $(elem).click(function() {
+	                $().JqueryFunction(elem);
+	            });
+	        }
+	    }
+	});
+
+
+	$(document).ready(function() {
+	  $("#jqueryBtn").click(function() {
+		  alert("ok");
+	    angular.element('#angularData').scope().AngularFunction();
+	  });
+	  
+	  (function($){
+	     $.fn.JqueryFunction = function(elem) {
+	    	 alert(elem);
+	    	 var currentId = $(elem[0]).attr('id');
+	    	 alert(currentId);
+//	    	 alert("adjoda:"+attrs);
+//	    	 alert((elem).attr('id'));
+	     }; 
+	  })( jQuery );
+
+	});

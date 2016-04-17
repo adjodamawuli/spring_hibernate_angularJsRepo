@@ -1,15 +1,25 @@
+
+
 <section id="form"><!--form-->
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form novalidate="novalidate" class="form-horizontal">
+						<form id="upload-file-form" novalidate="novalidate" class="form-horizontal">
 							<input type="text" placeholder="Titre" ng-model="annonce.titre"/>
 							<input type="text" placeholder="Description" ng-model="annonce.description"/>
 							<input type="number" placeholder="Prix" ng-model="annonce.prix"/>
 
-							<input type="file" class="custom-file-input" file-model="myFile"><!-- a completer -->
+<!-- 							<input	id="upload-file-input" type="file" name="uploadfile" accept="*" onchange="angular.element(this).scope().uploadFile(this)" /> <br /> -->
+<!-- <form id="upload-file-form"> -->
+		<label for="upload-file-input">Upload your file:</label> 
+		<input	id="upload-file-input" type="file" name="uploadfile" accept="*" /> <br />
+		<span id="upload-file-message"></span>
+<!-- 	</form> -->
+    
+    
+							
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Je confirme la publication de mon annonce
@@ -21,4 +31,46 @@
 			</div>
 		</div>
 	</section><!--/form-->
+	
+	
+	<script>
+	$(document).ready(function() {
+		$("#upload-file-input").on("change", uploadFile);
+	});
+
+	/**
+	 * Upload the file sending it via Ajax at the Spring Boot server.
+	 */
+	function uploadFile() {
+		$
+				.ajax({
+					url : "/springangularJs/uploadFile",
+					type : "POST",
+					data : new FormData($("#upload-file-form")[0]),
+					enctype : 'multipart/form-data',
+					processData : false,
+					contentType : false,
+					cache : false,
+					success : function() {
+						// Handle upload success
+						$("#upload-file-message").text(
+								"File succesfully uploaded");
+					},
+					error : function() {
+						// Handle upload error
+						$("#upload-file-message")
+								.text(
+										"File not uploaded (perhaps it's too much big)");
+					}
+				});
+	} // function uploadFile
+
+	function progress(e) {
+	    if (e.lengthComputable) {
+	        $('#progress_percent').text(Math.floor((e.loaded * 100) / e.total));
+	        $('progress').attr({value:e.loaded,max:e.total});
+	    }
+	}
+</script>
+
 	
