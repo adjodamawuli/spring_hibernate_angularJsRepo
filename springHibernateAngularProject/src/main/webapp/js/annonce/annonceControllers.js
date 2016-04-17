@@ -56,9 +56,7 @@ app.controller('AnnonceCreationCtrl', ['$scope', 'AnnoncesFactory', '$location',
     function ($scope, AnnoncesFactory, $location) {
 
         $scope.createNewAnnonce = function () {
-        	alert("creation annonce");
         	AnnoncesFactory.create($scope.annonce);
-        	alert("redirect to /annonce-list");
             $location.path('/annonce-list');
         }
     }]);
